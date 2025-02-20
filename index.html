@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natasha Grocery</title>
+    <link rel="stylesheet" href="tailwind.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="flex gap-4 w-full nav_cont">
+        <div class="flex items-center justify-between gap-2">
+          <div class="title">Matasha Grocery</div>
+          <img class="logo" src="./images/logo.png" alt="" />
+          <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
+        </div>
+
+        <div class="flex flex-col gap-1 justify-center">
+          <div class="flex gap-4">
+            <input
+              type="text"
+              placeholder="Search for fruits, vegetables, groceries..."
+              class="search-bar bg-white text-[#BDBDBD] rounded border-0"
+            />
+            <img
+              class="profile-icon_mobile"
+              src="./images/profile.png"
+              alt=""
+              srcset=""
+            />
+          </div>
+
+          <p class="address text-sm">
+            <i class="fas fa-map-marker-alt location-icon"></i>
+            Sent to Pamulang Barat Residence No.5, RT 05/ ...&#709;
+          </p>
+        </div>
+      </div>
+
+      <nav id="navMenu">
+        <button class="menubtn active">Home</button>
+        <button class="menubtn">Merchant Enquiry</button>
+        <button class="menubtn">Register</button>
+        <button class="menubtn">My Order</button>
+        <img src="./images/profile.png" class="profile-icon" alt="" srcset="" />
+      </nav>
+    </header>
+
+    <!-- <section class="slider-container">
+      <div class="slider">
+        <div class="slide">
+          <img src="images/Frame1.png" alt="Soup Package" />
+        </div>
+        <div class="slide">
+          <img src="images/Frame1.png" alt="Vegetable Basket" />
+        </div>
+        <div class="slide">
+          <img src="images/Frame1.png" alt="Vegetable Basket" />
+        </div>
+        <div class="slide">
+          <img src="images/Frame1.png" alt="Vegetable Basket" />
+        </div>
+      </div>
+      <div class="dots-container">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section> -->
+
+    <section id="banner-slider" class="banner__slider">
+      <div class="container">
+        <!-- products slider -->
+        <div class="slider__wrapper">
+          <div class="banner_slider">
+            <!-- dynamic data -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="category-slider" class="category__slider">
+      <div class="container">
+        <div class="section__header">
+          <h3>Categories</h3>
+          <!-- controlers -->
+          <div id="category-slider-controls" class="slider__controls">
+            <button class="category-previous btn">&larr;</button>
+            <button class="category-next btn">&rarr;</button>
+          </div>
+        </div>
+        <!-- products slider -->
+        <div class="slider__wrapper">
+          <div class="category_slider">
+            <!-- dynamic data -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="product-slider" class="product__slider">
+      <div class="container">
+        <!-- section header -->
+        <div class="section__header">
+          <h3>Buy Grocery direct from Special Brand</h3>
+          <!-- controlers -->
+          <div id="product-slider-controls" class="slider__controls">
+            <button class="product-previous btn">&larr;</button>
+            <button class="product-next btn">&rarr;</button>
+          </div>
+        </div>
+        <!-- products slider -->
+        <div class="slider__wrapper">
+          <div class="product_slider">
+            <!-- dynamic data -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="product1-slider" class="product1__slider">
+      <div class="container">
+        <!-- section header -->
+        <div class="section__header">
+          <h3>Recently View Items or Shop the Latest</h3>
+          <!-- controlers -->
+          <div id="product1-slider-controls" class="slider__controls">
+            <button class="product1-previous btn">&larr;</button>
+            <button class="product1-next btn">&rarr;</button>
+          </div>
+        </div>
+        <!-- products slider -->
+        <div class="slider__wrapper">
+          <div class="product1_slider">
+            <!-- dynamic data -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="product2-slider" class="product2__slider">
+      <div class="container">
+        <!-- section header -->
+        <div class="section__header">
+          <h3>Shop from your nearest Store</h3>
+          <!-- controlers -->
+          <div id="product2-slider-controls" class="slider__controls">
+            <button class="product2-previous btn">&larr;</button>
+            <button class="product2-next btn">&rarr;</button>
+          </div>
+        </div>
+        <!-- products slider -->
+        <div class="slider__wrapper">
+          <div class="product2_slider">
+            <!-- dynamic data -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="topbg_cont">
+      <div class="topbg"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
