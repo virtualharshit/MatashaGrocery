@@ -1,3 +1,19 @@
+function toggleNav() {
+  const navMenu = document.getElementById("navMenu");
+  navMenu.classList.toggle("open");
+}
+
+// Close the navbar when clicking outside of it
+document.addEventListener("click", function (event) {
+  const navMenu = document.getElementById("navMenu");
+  const menuIcon = document.querySelector(".menu-icon");
+
+  // Check if the click is outside the navbar and the menu icon
+  if (!navMenu.contains(event.target) && !menuIcon.contains(event.target)) {
+    navMenu.classList.remove("open");
+  }
+});
+
 const product_slider = document.querySelector(".product_slider");
 
 const productCollection = [
@@ -338,6 +354,11 @@ function product2Slider() {
                 <div class="rating">
                 ${generateStars(product2Collection[product].stars)}
                 </div>
+                <div class="freedelivery">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="25px" width="25px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M19 7c0-1.1-.9-2-2-2h-3v2h3v2.65L13.52 14H10V9H6c-2.21 0-4 1.79-4 4v3h2c0 1.66 1.34 3 3 3s3-1.34 3-3h4.48L19 10.35V7zM4 14v-1c0-1.1.9-2 2-2h2v3H4zm3 3c-.55 0-1-.45-1-1h2c0 .55-.45 1-1 1z"></path><path d="M5 6h5v2H5zM19 13c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 4c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"></path></svg>
+                Free Delivery
+                </div>
+                
             </div>
             `;
   }
@@ -486,3 +507,19 @@ function categorySlider() {
     },
   });
 }
+
+const addresses = [
+  "Sent to Pamulang Barat Residence No.5,...",
+  "Sent to Another Address 1",
+  "Sent to Another Address 2",
+];
+
+const dropdown = document.getElementById("address-dropdown");
+
+// Populate the dropdown with addresses
+addresses.forEach((address) => {
+  const option = document.createElement("option");
+  option.value = address;
+  option.textContent = address;
+  dropdown.appendChild(option);
+});

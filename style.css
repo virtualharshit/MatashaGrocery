@@ -22,8 +22,12 @@ body {
   color: white;
 }
 
+.nav_cont {
+  gap: 1rem;
+}
+
 .logo {
-  height: 60px;
+  height: 80px;
 }
 
 .title {
@@ -33,6 +37,91 @@ body {
 .search-bar {
   width: 100%;
   padding: 10px;
+}
+
+/* Search Bar Container */
+.search-bar-container {
+  position: relative;
+  flex-grow: 1;
+}
+
+/* Search Input */
+.search-bar {
+  width: 100%;
+  padding: 0.5rem 0.5rem 0.5rem 2.5rem; /* Space for icon */
+  font-size: 1rem;
+  color: #333; /* Dark text for input */
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Search Icon */
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bdbdbd;
+}
+
+/* Profile Icon */
+.profile-icon_mobile {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+/* Address Dropdown Container */
+.address-dropdown-container {
+  position: relative;
+  max-width: 350px;
+  min-width: 300px;
+}
+
+/* Address Dropdown */
+.address-dropdown {
+  width: 100%;
+  padding: 5px 1rem 5px 2rem; /* Space for icon */
+  font-size: 0.875rem;
+  color: white; /* White text */
+  background: transparent; /* Transparent background */
+  border: none; /* Semi-transparent border */
+  border-radius: 4px;
+  appearance: none; /* Remove default arrow */
+  outline: none;
+  cursor: pointer;
+}
+
+.address-dropdown:hover {
+  background-color: #bdbdbd70;
+}
+
+/* Style the dropdown options */
+.address-dropdown option {
+  background: #333; /* Dark background for options */
+  color: white; /* White text for options */
+}
+
+/* Location Icon */
+.location-icon {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white; /* White icon */
+}
+
+/* Dropdown Arrow (Custom) */
+.address-dropdown-container::after {
+  content: "▼";
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white; /* White arrow */
+  pointer-events: none; /* Ensure clicks pass through to the dropdown */
 }
 
 .slider-container {
@@ -86,6 +175,14 @@ body {
   border-radius: 10px;
 }
 
+/* navbar -------------------------------------------------- */
+
+.logo1 {
+  display: none;
+}
+
+/*  ------------------------------------------------------ */
+
 .menu-icon {
   display: none;
   font-size: 24px;
@@ -124,14 +221,25 @@ nav button {
   padding: 8px 15px;
   font-weight: 600;
   width: max-content;
+  cursor: pointer;
+  justify-content: center;
 }
 
-.active {
-  color: black;
+.menubtn:hover {
+  background-color: #00000020;
+  /* background-color: #555; */
+}
+
+.menubtn.active {
   background-color: white;
 }
 
-@media (max-width: 600px) {
+.active {
+  background-color: white;
+  color: black;
+}
+
+@media (max-width: 768px) {
   .navbar {
     display: flex;
     flex-direction: column;
@@ -144,18 +252,29 @@ nav button {
     display: block;
   }
 
+  .menubtn {
+    width: 100%;
+  }
+
   nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     position: fixed;
     top: 0;
-    z-index: 2;
-    right: -250px;
+    left: -252px;
     width: 250px;
-    height: 100vh;
+    z-index: 2;
+    width: 250px;
+    height: 100%;
     background: #d3131b;
-    flex-direction: column;
-    align-items: flex-start;
     padding: 20px;
-    transition: right 0.3s ease-in-out;
+    transition: left 0.3s ease-in-out;
+    border-right: 2px solid white;
+  }
+
+  nav.open {
+    left: 0;
   }
 
   .nav_cont {
@@ -192,6 +311,10 @@ nav button {
     display: none;
   }
 
+  .logo1 {
+    display: block;
+  }
+
   .title {
     display: flex;
     font-weight: bold;
@@ -221,6 +344,10 @@ nav button {
 
   .dot.active {
     width: 20px;
+  }
+
+  .address-dropdown-container {
+    max-width: none;
   }
 }
 
@@ -386,6 +513,21 @@ button [data-action="stop"] {
   font-size: 1.5rem;
   display: flex;
   gap: 8px;
+}
+
+.freedelivery {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(240, 196, 129, 0.4) 0%,
+    rgba(255, 185, 87, 0.4) 100%
+  );
+  width: fit-content;
+  border-radius: 30px;
 }
 
 /* banner slider -------------------------- */
