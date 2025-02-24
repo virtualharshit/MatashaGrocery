@@ -13,6 +13,10 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 .navbar {
   padding: 15px 3rem;
   display: flex;
@@ -191,7 +195,9 @@ body {
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: end;
 }
 
 nav button {
@@ -223,6 +229,8 @@ nav button {
   width: max-content;
   cursor: pointer;
   justify-content: center;
+  margin: 0 10px;
+  text-align: center;
 }
 
 .menubtn:hover {
@@ -254,12 +262,14 @@ nav button {
 
   .menubtn {
     width: 100%;
+    margin: 10px;
   }
 
   nav {
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: flex-start;
     position: fixed;
     top: 0;
     left: -252px;
@@ -278,6 +288,7 @@ nav button {
   }
 
   .nav_cont {
+    width: 100%;
     flex-direction: column;
   }
 
@@ -365,11 +376,11 @@ nav button {
   padding-block: 1rem;
 }
 
-.product2__slider {
+/* .product2__slider {
   position: relative;
   width: 100%;
   padding-block: 1rem;
-}
+} */
 
 .container {
   position: relative;
@@ -528,6 +539,38 @@ button [data-action="stop"] {
   );
   width: fit-content;
   border-radius: 30px;
+}
+
+/* Default styles for larger screens */
+.product2_slider {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 18px; /* Adjust the gap between cards */
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+  .product2_slider {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 1rem; /* Adjust the gap between cards */
+  }
+
+  .card {
+    width: 100%; /* Ensure cards take full width */
+  }
+
+  .mobile-stack .card {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .mobile-stack img {
+    width: 45%;
+  }
+
+  .product2__slider .slider__controls {
+    display: none;
+  }
 }
 
 /* banner slider -------------------------- */
@@ -721,10 +764,16 @@ button [data-action="stop"] {
 
 .category {
   width: 250px;
+  cursor: pointer;
 }
+
+.category:hover {
+  transform: scale(1.1);
+}
+
 .category img {
   width: 100%;
-  height: 200px;
+  height: 160px;
   object-fit: contain;
   border-radius: 10px;
 }
@@ -733,4 +782,59 @@ button [data-action="stop"] {
   font-size: 22px;
   padding: 10px;
   text-align: center;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .banner img {
+    height: 250px;
+  }
+
+  .container {
+    width: auto;
+  }
+
+  .section__header h3 {
+    font-size: 1.5rem;
+  }
+
+  .category img {
+    height: 100px;
+  }
+  .category h3 {
+    font-size: 1rem;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+  .card p {
+    font-size: 0.8rem;
+    padding-bottom: 8px;
+  }
+
+  .rating {
+    font-size: 1.2rem;
+  }
+
+  .freedelivery {
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
+    padding: 5px 10px;
+    width: fit-content;
+    border-radius: 30px;
+  }
+
+  .tns-nav button {
+    padding: 7px;
+  }
+
+  .tns-nav .tns-nav-active {
+    padding: 7px 15px;
+  }
 }

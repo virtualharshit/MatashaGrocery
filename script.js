@@ -128,6 +128,9 @@ function productSlider() {
     mouseDrag: true,
     swipeAngle: false,
     responsive: {
+      500: {
+        items: 3, // Show 4 items on larger screens
+      },
       992: {
         items: 4,
       },
@@ -251,6 +254,9 @@ function product1Slider() {
     mouseDrag: true,
     swipeAngle: false,
     responsive: {
+      500: {
+        items: 3, // Show 4 items on larger screens
+      },
       992: {
         items: 4,
       },
@@ -259,8 +265,6 @@ function product1Slider() {
 }
 
 // product2 slider ----------------------------------
-
-const product2_slider = document.querySelector(".product2_slider");
 
 const product2Collection = [
   {
@@ -313,7 +317,10 @@ const product2Collection = [
   },
 ];
 
+const product2_slider = document.querySelector(".product2_slider");
+
 window.addEventListener("load", () => product2Slider());
+window.addEventListener("resize", () => product2Slider());
 
 function generateStars(rating) {
   let stars = "";
@@ -343,6 +350,7 @@ function product2Slider() {
                 src="${product2Collection[product].productImage}"
                 alt="Gavya Mart"
                 />
+                <span> 
                 <h3>${product2Collection[product].productTitle}</h3>
                 <p>${product2Collection[product].productDetail}</p>
                 <p><i class="fas fa-truck delivery-icon"></i> <strong>${
@@ -358,32 +366,41 @@ function product2Slider() {
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="25px" width="25px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M19 7c0-1.1-.9-2-2-2h-3v2h3v2.65L13.52 14H10V9H6c-2.21 0-4 1.79-4 4v3h2c0 1.66 1.34 3 3 3s3-1.34 3-3h4.48L19 10.35V7zM4 14v-1c0-1.1.9-2 2-2h2v3H4zm3 3c-.55 0-1-.45-1-1h2c0 .55-.45 1-1 1z"></path><path d="M5 6h5v2H5zM19 13c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 4c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"></path></svg>
                 Free Delivery
                 </div>
-                
+                </span>
             </div>
             `;
   }
   product2_slider.innerHTML = products;
 
-  const tnSlider = tns({
-    container: ".product2_slider",
-    items: 2,
-    gutter: 18,
-    slideBy: 1,
-    nav: true,
-    navPosition: "bottom",
-    speed: 400,
-    controlsContainer: "#product2-slider-controls",
-    prevButton: ".product2-previous",
-    nextButton: ".product2-next",
-    touch: true,
-    mouseDrag: true,
-    swipeAngle: false,
-    responsive: {
-      992: {
-        items: 4,
+  // Initialize Tiny Slider only for larger screens
+  if (window.innerWidth > 767) {
+    const tnSlider = tns({
+      container: ".product2_slider",
+      items: 2, // Default number of items
+      gutter: 18,
+      slideBy: 1,
+      nav: true,
+      navPosition: "bottom",
+      speed: 400,
+      controlsContainer: "#product2-slider-controls",
+      prevButton: ".product2-previous",
+      nextButton: ".product2-next",
+      touch: true,
+      mouseDrag: true,
+      swipeAngle: false,
+      responsive: {
+        500: {
+          items: 3, // Show 4 items on larger screens
+        },
+        992: {
+          items: 4, // Show 4 items on larger screens
+        },
       },
-    },
-  });
+    });
+  } else {
+    // For mobile view, disable Tiny Slider and let cards stack naturally
+    product2_slider.classList.add("mobile-stack");
+  }
 }
 
 // banner slider  -------------------------------------------------
@@ -488,7 +505,7 @@ function categorySlider() {
 
   const tnSlider = tns({
     container: ".category_slider",
-    items: 2,
+    items: 3,
     gutter: 15,
     slideBy: 1,
     nav: true,
@@ -501,6 +518,9 @@ function categorySlider() {
     mouseDrag: true,
     swipeAngle: false,
     responsive: {
+      500: {
+        items: 4, // Show 4 items on larger screens
+      },
       992: {
         items: 5,
       },

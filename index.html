@@ -22,10 +22,13 @@
   </head>
   <body>
     <header class="navbar">
-      <div class="flex w-full nav_cont">
+      <div class="flex nav_cont">
         <div class="flex items-center justify-between gap-2">
           <div class="title">Matasha Grocery</div>
-          <img class="logo" src="./images/logo.png" alt="" />
+
+          <a href="./index.html"
+            ><img class="logo" src="./images/logo.png" alt="" />
+          </a>
           <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
         </div>
 
@@ -58,9 +61,14 @@
       </div>
 
       <nav id="navMenu">
-        <img class="logo1" src="./images/logo.png" alt="" />
-        <button class="menubtn active">Home</button>
-        <button class="menubtn flex gap-2 items-center">
+        <a href="./index.html"
+          ><img class="logo1" src="./images/logo.png" alt="" />
+        </a>
+        <a href="./index.html" class="menubtn active navele">Home</a>
+        <a
+          href="https://www.matashagrocery.com/Merchant"
+          class="menubtn flex gap-2 items-center navele"
+        >
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -79,11 +87,17 @@
             ></path>
           </svg>
           Sell On Matasha
-        </button>
-        <button class="menubtn flex gap-2 items-center">
+        </a>
+        <a
+          href="https://www.matashagrocery.com/Login"
+          class="menubtn flex gap-2 items-center navele"
+        >
           <i class="fa-regular fa-user"></i>Sign In
-        </button>
-        <button class="menubtn flex gap-2 items-center">
+        </a>
+        <a
+          href="https://www.matashagrocery.com/Home/MyOrderspartial"
+          class="menubtn flex gap-2 items-center navele"
+        >
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -109,8 +123,13 @@
             ></path>
           </svg>
           My Order
-        </button>
-        <img src="./images/profile.png" class="profile-icon" alt="" srcset="" />
+        </a>
+        <img
+          src="./images/profile.png"
+          class="profile-icon navele"
+          alt=""
+          srcset=""
+        />
       </nav>
     </header>
 
